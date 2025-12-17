@@ -1,28 +1,53 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.5;
-  scroll-behavior: smooth;
-  background-color: #f9fafb;
-  color: #111827;
+html,
+body {
+    width: 100%;
+    height: 100%;
+    line-height: 1.5;
+    scroll-behavior: smooth;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+
+:root {
+    --pri: #F8F4E1;
+    --sec: #381c0a;
+    --tri1: #FEBA17;
+    --tri2: #74512D;
+    --red: red;
+    --green: rgb(9, 138, 89);
+    --blue: rgb(0, 191, 255);
+    --black: black;
 }
 
+@font-face {
+    font-family: aeonik;
+    font-weight: 200;
+    src: url(assest/font/AeonikTRIAL-Light.otf);
+}
+
+@font-face {
+    font-family: aeonik;
+    font-weight: 500;
+    src: url(assest/font/AeonikTRIAL-Regular.otf);
+}
+
+@font-face {
+    font-family: aeonik;
+    font-weight: 700;
+    src: url(assest/font/AeonikTRIAL-Bold.otf);
+}
 
 
 #main {
     width: 100%;
     height: 100%;
-    background-color: #111;
+    background-color: var(--black);
+    font-family: aeonik; 
+    color: var(--pri);
 }
+
