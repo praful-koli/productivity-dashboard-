@@ -51,3 +51,65 @@ body {
     color: var(--pri);
 }
 
+nav {
+    width: 100%;
+    height: 60px;
+    background-color: var(--tri2);
+    position: fixed;
+}
+
+section.all-element {
+    width: 100%;
+    min-height: 100%;
+    background-color: var(--sec);
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-top: 80px;
+    padding-left: 30px;
+}
+
+
+section .element{
+    background-color: var(--tri1);
+    width: 230px;
+    height: 320px;
+    border-radius: 15px;
+    font-size: 25px;
+    font-weight: 200;
+    overflow: hidden;
+    position: relative;
+    z-index: 4;
+     transition: all 0.5s ease; 
+     outline: none;
+}
+section .element >img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+section .element > .text {
+  text-transform: capitalize;
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 20%;
+   display: flex;
+   justify-content: center;
+   z-index: 10;
+   background: linear-gradient(to bottom, rgba(71, 69, 69, 0), rgba(0, 0, 0, 0.537));
+   transform: translateY(100%);
+   transition: all 0.5s ease; 
+}
+
+section .element:hover .text {
+   transform: translateY(0);
+}
+section .element:active  {
+   transform: scale(0.9);
+}
+
+
+
