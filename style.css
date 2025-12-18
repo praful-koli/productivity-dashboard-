@@ -17,6 +17,7 @@ body {
     --pri: #F8F4E1;
     --sec: #381c0a;
     --tri1: #FEBA17;
+    --btn: #e4a208;
     --tri2: #74512D;
     --red: red;
     --green: rgb(9, 138, 89);
@@ -47,8 +48,9 @@ body {
     width: 100%;
     height: 100%;
     background-color: var(--black);
-    font-family: aeonik; 
+    font-family: aeonik;
     color: var(--pri);
+    user-select: none;
 }
 
 nav {
@@ -56,6 +58,7 @@ nav {
     height: 60px;
     background-color: var(--tri2);
     position: fixed;
+    z-index: 10;
 }
 
 section.all-element {
@@ -68,10 +71,11 @@ section.all-element {
     gap: 40px;
     padding-top: 80px;
     padding-left: 30px;
+    position: absolute;
 }
 
 
-section .element{
+section .element {
     background-color: var(--tri1);
     width: 230px;
     height: 320px;
@@ -80,36 +84,223 @@ section .element{
     font-weight: 200;
     overflow: hidden;
     position: relative;
-    z-index: 4;
-     transition: all 0.5s ease; 
-     outline: none;
+    transition: all 0.5s ease;
+    cursor: pointer;
 }
-section .element >img {
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
+
+section .element>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
 }
-section .element > .text {
-  text-transform: capitalize;
-   position: absolute;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   height: 20%;
-   display: flex;
-   justify-content: center;
-   z-index: 10;
-   background: linear-gradient(to bottom, rgba(71, 69, 69, 0), rgba(0, 0, 0, 0.537));
-   transform: translateY(100%);
-   transition: all 0.5s ease; 
+
+section .element>.text {
+    text-transform: capitalize;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to bottom, rgba(71, 69, 69, 0), rgba(0, 0, 0, 0.537));
+    transform: translateY(100%);
+    transition: all 0.5s ease;
 }
 
 section .element:hover .text {
-   transform: translateY(0);
-}
-section .element:active  {
-   transform: scale(0.9);
+    transform: translateY(0);
 }
 
+section .element:active {
+    transform: scale(0.9);
+}
+
+section .element:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.642);
+}
 
 
+.fullElem {
+    width: 100%;
+    height: 100%;
+    background-color: var(--sec);
+    color: var(--pri);
+    display: none;
+    position: absolute;
+    z-index: 11;
+
+    padding: 1.5rem;
+}
+
+
+.fullElem-continer {
+    width: 100%;
+    height: 100%;
+    /* background-color: #74512D; */
+    border-radius: 25px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--tri2) 0%, var(--sec) 100%);
+}
+
+.heading {
+    padding: 15px 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.heading>h1 {
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.btn {
+    border: none;
+    padding: 9px 23px;
+    font-weight: 2500;
+    font-size: 14px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: var(--btn);
+    color: var(--sec);
+    font-weight: 500;
+}
+
+.btn:active {
+    transform: scale(0.97);
+
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background-color: var(--pri);
+
+}
+
+.todo-container {
+    width: 100%;
+    height: 90%;
+    background-color: #4e3621;
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 10px;
+
+}
+
+.addTask {
+    /* background-color: rgb(36, 39, 39); */
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+.addTask>h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+
+}
+
+.addTask .all-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.addTask .all-form .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--pri);
+}
+
+.addTask .all-form .form-group>input {
+    width: 100%;
+    padding: 12px 12px;
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.addTask .all-form .form-group>input:focus {
+
+   border: 2px solid var(--tri1);
+}
+
+.addTask .all-form .form-group>textarea {
+    width: 100%;
+    height: 5rem;
+    padding: 12px 12px;
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.addTask .all-form .form-group>textarea:focus {
+    border: 2px solid var(--tri1);
+}
+
+.addTask .all-form .form-group>select {
+    width: 100%;
+    padding: 12px 12px;
+    outline: none;
+    border-radius: 10px;
+    /* border: 2px solid black; */
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+
+
+.addTask .all-form .checkbox-group {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px !important;
+    height: 20px !important;
+    cursor: pointer;
+    accent-color: var(--tri1);
+}
+
+.add-btn {
+    width: 100%;
+    background: var(--tri1);
+    color: var(--sec);
+    border: none;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+    transform: translateY(-2px);
+    background: var(--pri);
+    
+}
+
+.task-input:focus,
+.task-textarea:focus,
+.task-select:focus {
+    border-color: var(--tri1);
+    box-shadow: 0 0 0 1px rgba(254, 186, 23, 0.2);
+}

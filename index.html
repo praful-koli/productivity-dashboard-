@@ -1,54 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productivity-Dashborad</title>
-     <link rel="stylesheet" href="style.css">
-      <link rel="shortcut icon" href="./assest/favicon/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./assest/favicon/favicon-32x32.png" type="image/x-icon">
 </head>
+
 <body>
-    
+
     <main id="main">
-           <nav>
+        <nav>
 
-           </nav>
+        </nav>
 
-           <section class="all-element">
-                <div class="todo element" id="1">
-                    <img src="./assest/image/todo.jpg" alt="">
-                     <div class="text">
-                        to do
-                     </div>
+        <section class="all-element">
+            <div class="todo element" data-id="0">
+                <img src="./assest/image/todo.jpg" alt="">
+                <div class="text">
+                    to do
                 </div>
-                <div class="daily element" id="2">
-                    <img src="assest/image/dailyPlanner.jpg" alt="">
-                     <div class="text">
-                        daily Planner
-                     </div>
+            </div>
+            <div class="daily element" data-id="1">
+                <img src="assest/image/dailyPlanner.jpg" alt="">
+                <div class="text">
+                    daily Planner
                 </div>
-                <div class="Motivtion element" id="3">
-                    <img src="assest/image/motivation.jpg" alt="">
-                    <div class="text">
-                        Motivtion
-                     </div>
+            </div>
+            <div class="Motivtion element" data-id="2">
+                <img src="assest/image/motivation.jpg" alt="">
+                <div class="text">
+                    Motivtion
                 </div>
-                <div class="pmodoro element" id="4">
-                    <img src="assest/image/Pomodoro.webp" alt="">
-                      <div class="text">
-                        Pomodoro timer
-                     </div>
+            </div>
+            <div class="pmodoro element" data-id="3">
+                <img src="assest/image/Pomodoro.webp" alt="">
+                <div class="text">
+                    Pomodoro timer
                 </div>
-                <div class="daily-goal element" id="5">
-                    <img src="assest/image/goal.jpg" alt="">
-                    <div class="text">
-                        
-                        daily goals
-                     </div>
+            </div>
+            <div class="daily-goal element" data-id="4">
+                <img src="assest/image/goal.jpg" alt="">
+                <div class="text">
+
+                    daily goals
                 </div>
-           </section>
+            </div>
+        </section>
+
+
+
+        <section class="fullElem todo-fullpage">
+            <div class="fullElem-continer">
+                <div class="heading">
+                    <h1>Your Personalised Task List</h1>
+                    <button class="close btn" data-id="0">Close</button>
+                </div>
+
+                <div class="todo-container">
+                    <div class="addTask">
+                        <h2 class="form-title">Add New Task</h2>
+                        <div class="all-form">
+                            <div class="form-group">
+                                <label class="form-label">Task Name</label>
+                                <input type="text" class="task-input" id="taskName" placeholder="Enter task name">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Task Details</label>
+                                <textarea class="task-textarea" id="taskDetail"
+                                    placeholder="Describe your task..."></textarea>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="isImportant">
+                                <label class="form-label" for="isImportant" style="margin-bottom: 0;">Mark as
+                                    Important</label>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Set Priority</label>
+                                <select class="task-select" id="taskPriority">
+                                    <option value="low">Low Priority</option>
+                                    <option value="medium">Medium Priority</option>
+                                    <option value="high">High Priority</option>
+                                </select>
+                            </div>
+
+                            <button class="add-btn" onclick="addTask()">Add Task</button>
+                        </div>
+                    </div>
+                    <!-- R -->
+                    <div class="allTask">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="fullElem">
+
+            <div class="heading">
+                <h1>Plan your Day to be more Productive</h1>
+                <button class="close btn" data-id="1">Close</button>
+            </div>
+        </section>
+
+        <section class="fullElem">
+            <div class="heading">
+                <h1>Quote of the Day</h1>
+                <button class="close btn" data-id="2">Close</button>
+            </div>
+        </section>
+
+        <section class="fullElem">
+            <div class="heading">
+                <h1>Study with me!</h1>
+                <button class="close btn" data-id="3">Close</button>
+            </div>
+        </section>
+
+        <section class="fullElem">
+            <div class="heading">
+                <h1>Daily Goals</h1>
+                <button class="close btn" data-id="4">Close</button>
+            </div>
+        </section>
     </main>
 
     <script src="app.js"></script>
 </body>
+
 </html>
