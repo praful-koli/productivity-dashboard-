@@ -75,7 +75,7 @@
                             </div>
 
                             <div class="form-group checkbox-group">
-                                <input type="checkbox" id="isImportant">
+                                <input type="checkbox" id="isImportant" value="true">
                                 <label class="form-label" for="isImportant" style="margin-bottom: 0;">Mark as
                                     Important</label>
                             </div>
@@ -83,13 +83,14 @@
                             <div class="form-group">
                                 <label class="form-label">Set Priority</label>
                                 <select class="task-select" id="taskPriority">
-                                    <option value="low">Low Priority</option>
-                                    <option value="medium">Medium Priority</option>
-                                    <option value="high">High Priority</option>
+                                    <option disabled value="Select Priority">Select Priority</option>
+                                    <option value="LOW PEIORITY">Low Priority</option>
+                                    <option value="MEDIUM PEIORITY">Medium Priority</option>
+                                    <option value="High PEIORITY">High Priority</option>
                                 </select>
                             </div>
 
-                            <button class="add-btn" onclick="addTask()">Add Task</button>
+                            <button class="add-btn" id="add-task-btn">Add Task</button>
                         </div>
                     </div>
                     <!-- R -->
@@ -98,69 +99,18 @@
                             <span class="task-count">All Tasks (<span id="taskCount">0</span>)</span>
                             <button class="delete-all-btn">Delete All</button>
                         </div>
-                        <div class="task">
-                            <div class="left">
-                                <h1 class="title">Task1</h1>
-                                <P class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit.!
-                                </P>
-                                <p class="priority">
-                                    MEDIUM PRIORITY
-                                </p>
-                            </div>
-                            <div class="right">
-                                <button class="status-btn btn">Not Started</button>
-                                <button class="delete-task-btn ">Delete</button>
+              
+                          
 
-                            </div>
+
+
+
+                         <!-- show no task add yet! -->
+                        <div class="empty-state">
+                           
+                            <p>No tasks yet. Add one to get started!</p>
                         </div>
 
-                        <div class="task">
-                            <div class="left">
-                                <h1 class="title">Task1</h1>
-                                <P class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit.!
-                                </P>
-                                <p class="priority">
-                                    MEDIUM PRIORITY
-                                </p>
-                            </div>
-                            <div class="right">
-                                <button class="status-btn btn">Not Started</button>
-                                <button class="delete-task-btn ">Delete</button>
-
-                            </div>
-                        </div>
-
-                         <div class="task">
-                            <div class="left">
-                                <h1 class="title">Task1</h1>
-                                <P class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit.!
-                                </P>
-                                <p class="priority">
-                                    MEDIUM PRIORITY
-                                </p>
-                            </div>
-                            <div class="right">
-                                <button class="status-btn btn">Not Started</button>
-                                <button class="delete-task-btn ">Delete</button>
-
-                            </div>
-                        </div>
-                         <div class="task">
-                            <div class="left">
-                                <h1 class="title">Task1</h1>
-                                <P class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit.!
-                                </P>
-                                <p class="priority">
-                                    MEDIUM PRIORITY
-                                </p>
-                            </div>
-                            <div class="right">
-                                <button class="status-btn btn">Not Started</button>
-                                <button class="delete-task-btn ">Delete</button>
-
-                            </div>
-                        </div>
-                        
                     </div>
                 </div>
             </div>

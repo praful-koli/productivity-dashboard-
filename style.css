@@ -23,6 +23,10 @@ body {
     --green: rgb(9, 138, 89);
     --blue: rgb(0, 191, 255);
     --black: black;
+
+    --del-bg :#F5D7C4;
+    --status-bg:#F2F2F2;
+    --status-text:#808080;
 }
 
 @font-face {
@@ -176,7 +180,7 @@ section .element:hover {
 }
 
 .btn:hover {
-    transform: translateY(-3px);
+    transform: translateY(-3px); 
     background-color: var(--pri);
 
 }
@@ -232,6 +236,8 @@ section .element:hover {
     outline: none;
     border-radius: 10px;
     border: 2px solid transparent;
+     font-size: 13px;
+    font-weight: 500;
     transition: all 0.3s ease;
 }
 
@@ -247,6 +253,8 @@ section .element:hover {
     outline: none;
     border-radius: 10px;
     border: 2px solid transparent;
+    font-size: 13px;
+    font-weight: 500;
     transition: all 0.3s ease;
 }
 
@@ -348,7 +356,7 @@ section .element:hover {
     color: black;
     width: 100%;
     /* height: 100px; */
-    background-color: white;
+    background-color: var(--pri);
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
@@ -358,9 +366,9 @@ section .element:hover {
 }
 .allTask .task:hover {
    transform: translateY(-2px);
-   border-bottom: 2px solid rgb(245, 20, 20);
-   border-left: 2px solid red;
-   border-right: 2px solid red;
+   border-bottom: 3px solid var(--status-text);
+   border-left: 3px solid var(--status-text);
+   border-right: 3px solid var(--status-text);
 }
 .allTask .task .left {
    display: flex;
@@ -370,15 +378,17 @@ section .element:hover {
 .allTask .task .left .title{
    font-weight: 700;
    font-size: 20px;
+   text-transform: capitalize;
 }
 .allTask .task .left .description{
    font-weight: 500;
    font-size: 14px;
    color: rgba(101, 98, 98, 0.808);
+   text-transform:capitalize;
 }
 .allTask .task .left .priority{
    font-size: 11.5px;
-   background-color: #F5D7C4;
+   background-color: var(--del-bg);
    color: var(--red);
    width: fit-content;
    padding: 4px 8px;
@@ -387,10 +397,10 @@ section .element:hover {
    margin-top: 5px;
 }
 .allTask .task .right .status-btn {
-    background-color: #F2F2F2;
-    color: #808080;
+    background-color: var(--status-bg);
+    color: var(--status-text);
     padding: 6px 12px;
-    border: 1.5px solid #808080;
+    border: 1.5px solid var(--status-text);
     font-weight: 600;
     font-size: 13px;
     border-radius: 8px;
@@ -401,7 +411,7 @@ section .element:hover {
    gap: 10px;
 }
 .allTask .task .right .delete-task-btn {
-    background-color: #F5D7C4;
+    background-color: var(--del-bg);
     color: var(--red);
     padding: 7px 13px;
     border: none;
@@ -416,3 +426,24 @@ section .element:hover {
 }
 
 
+/*  empty state */
+
+
+.empty-state {
+  display: flex;
+  flex-direction: column;   /* stack svg and text vertically */
+  align-items: center;      /* center horizontally */
+  justify-content: center;  /* center vertically if you give height */
+  text-align: center;       /* center the text too */
+  height: 200px; 
+ }           /* optional: define height for vertical centering */
+.empty-state > p{
+       color: var(--sec);
+       font-weight: 700;
+       font-size: 28px;
+}
+
+
+.imp {
+    border-left: 4px solid var(--red);
+}
